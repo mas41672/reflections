@@ -1,0 +1,76 @@
+terminal shortcuts:
+copy and paste for - ctrl + schift + c/v
+
+
+Download two files into Downloads folder:
+#1
+enable tab completion:			git-completion.bash
+enable special git features:	git-prompt.sh
+
+#2
+cd ~
+mv Downloads/git-completion.bash git-prompt.sh
+mv Downloads/git-prompt.sh git-prompt.sh
+
+#3
+mv Downloads/git-completion.bash
+mv Downloads/git-prompt.sh
+
+#4 
+Download file: bash_profile_course
+for linux
+if there is a existing '.bashrc' in the home directory
+copy the content of the 'bash_profile-course' in the
+'.bashrc'file. Close the terminal and open it. 
+
+#5
+(subl already working) 
+git config --global core.editor "subl -n -w"
+git config --global push.default upstream
+git config --global merge.conflictstyle diff3
+
+
+git configuration:
+git config --global color.ui auto
+git clone https://github.com/xxx
+git diff #1 #2
+git checkout # 
+
+### commands
+git init (initiate repository)
+git log
+git status (shows which lines have changed since the last commit)
+git add #file
+git commit
+git commit -m "Commit message" (git commit message without of text editor)
+udacity styling guide: https://udacity.github.io/git-styleguide/
+
+
+Reflections on git:
+
+#2 How could having easy access to the entire history of a file make you a more efficient programmer?
+
+A2 Having easy access to the entire history of a file can make you a more efficient programmer, because in some point of the time, even a far away future, you are able to se the evolution of the program and understand why some changes were made.
+
+#3 What do you think are the pros and cons of manually choosing when to create a commit, like you do in Git, vs having versions automatically saved, like Google Docs does?
+
+A3 The cons of not being automatically save are non existent, nevertheless the only pro is that a during OS failure the file are saved in the cloud. The pros of beeing able to choose the time when a software change is being saved through a commitment is that the programer conciously decides when to commit the logical change.
+
+#4 Why do you think some version control systems, like Git, allow saving multiple files in one commit, while others, like Google Docs, treat each file separatly?
+
+A4 Git allows saving multiple files in one commit, because these files interralete with each other. They are interdependend need each other (e.g. a specific html file with its css file).
+
+#5 How can you use the commands git log and git diff to view the history of files?
+
+A5 Whith the command git log the whole history of the commits can be seen. To look for a particular error guess the error in a commit through reading the commit message. Having seen the commit where the error could have been introduced look for the change between the commit before the "possible error commit" with the 'git diff #1 #2' command and the respective commit hashes. 
+
+#6 How might using version control make you more confident to make changes that could break something?
+
+A6 Beeing able to revert to the state before a change through a commit can make the programmer more confident to make changes, because the programmer can return to functioning program and loosing the fear of making changes.
+
+#7 How Do You Want to Use Git?
+   Now that you have your workspace set up, what do you want to try using Git for?
+
+A7 While learning Java I want to use Git for pushing my code on Github. So that I can look at the code in an unkown feature to look something up. I want to become a better programmer.
+
+
