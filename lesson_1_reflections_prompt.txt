@@ -33,10 +33,15 @@ git config --global merge.conflictstyle diff3
 git configuration:
 git config --global color.ui auto
 git clone https://github.com/xxx
-git diff #1 #2
-git checkout # 
+-- set up password caching--
+git config --global credential.helper cache
+git config --global credential.helper 'cache --timeout=3600'
+-- Generating a new SSH key
+ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+eval "$(ssh-agent -s)"
 
-### commands
+
+### commands 
 git init (initiate repository)
 git log
 git status (shows which lines have changed since the last commit)
@@ -44,6 +49,36 @@ git add #file
 git commit
 git commit -m "Commit message" (git commit message without of text editor)
 udacity styling guide: https://udacity.github.io/git-styleguide/
+git diff #1 #2
+git checkout #  
+git diff (no arguments) -> will show the changes between the 
+                           working directory and staging area
+git remote (look for remote)
+git remote add origin https://xxx
+git remote -v
+git push origin master (master=name)
+git diff ( difference between working directory and staging area)
+git diff --staged (difference between staging area and repository)
+git reset -- hard (CAUTION! - irreversible) removes changes between
+			 working directory and staging area
+git diff commit1 commit2
+git checkout master
+git branch (prints the branches in the terminal)
+git branch filename (creates a new branch with the name 'filename')
+git log --graph --online master #branch1 #branch2
+git checkout -b new_branch name    is like running following two commands
+	git branch new_branch_name
+	git checkout new_branch_name
+merge check first the branch out you want to point from 
+git merge nameOfBranchWichIscheckedOut nameOfSecondBranch
+git show commit1 (shows the diff regarding its parent)
+git branch -d branchName (delets the label of the branch, the commits stay)
+git push myRemote myBranch
+git pull origin master
+get fetch
+
+Note
+git pull origin master = git fetch origin + git merge master origin/master
 
 
 Reflections on git:
