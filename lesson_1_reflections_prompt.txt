@@ -109,3 +109,51 @@ A6 Beeing able to revert to the state before a change through a commit can make 
 A7 While learning Java I want to use Git for pushing my code on Github. So that I can look at the code in an unkown feature to look something up. I want to become a better programmer.
 
 
+2020.10.07
+
+Following Situation:
+All commits are comitted on a 'local' repository. Then a repository is initialized in Github. 
+
+In the local repo type following:
+
+git remote (to add en view remote)
+
+git remote add supplyNameHERE (adds the repository on GitHub as a remote)
+If only one remote exists in the repository use:
+git remote add origin typeHereURL
+git remote -v
+git push remoteNameHere(origin) branchNameHere(master)
+git pull remoteNameHere(origin) branchNameHere(master)
+
+### fork repository (like a clone done on github from one account to another acc.)
+(thoughts: branch is locally; clone from github to local repo and from locl to local repo; fork (clone) inside Github)
+
+##pull a combined version of both branches (remotes) (collaboration Problem)
+
+git pull origin master = git fetch origin + git merge master origin/master (the merge is locally)
+git log origin/master
+git diff origin/master master
+!! In case of merge conflict:
+change the source coude in the "conflict" file.
+git add conflictFileHere.file
+git commit (will do a merge commit)
+
+Note: fast forward merge(pull)
+
+Get feedback before push on the master branch
+1) push on own fork, but not on the master branch
+First step: checkout a new branch and make changes
+2) git add & git commit % git push origin newBranchNameHere
+3) In Github change the branch. In this case: newBranchNameHere
+4) In Github click 'pull request' (Github assums pull into the origin repo/branch)
+5) click 'edit' change base fork (own)
+6) A thrid party can notify a pull request into (my) master branch
+6b) Inline comment in Github for e.g. spelling mistake in a commit
+! 7) A not automatically merge should be resolved by the first party before two branches are merged, so (I)you can see how the merge conflict is resolved by the thrid party!
+8) 7) means: merge conflicts have to be resolved locally first! Therefore pull the latest state of the origin/master
+
+Note: You could make your changes directly to the master branch in your fork, but when contributing to a public repository, it’s standard practice to make the changes in a non-master branch within the fork. This way, you can easily keep your master branch up-to-date with master of the original repository, and merge changes from master into your branch when you are ready.
+
+Note for Windows Users: The story has grown so large that it exceeds Windows' path length limit. If you encounter an error when cloning you can work around it by modifying a configuration setting. Run this command in git bash: git config --system core.longpaths true.
+
+
